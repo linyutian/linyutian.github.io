@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" width="720" height="240" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <rect width="720" height="240" fill="#ffffff"/>
+  <text x="180" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0a3069" letter-spacing="1">CLASSIC SYSTEM</text>
+  <text x="540" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#762c00" letter-spacing="1">LLM INFERENCE</text>
+  <line x1="360" y1="20" x2="360" y2="225" stroke="#d0d7de" stroke-width="1.5"/>
+
+  <!-- Classic: tiny program, large input -->
+  <rect x="40" y="108" width="36" height="36" rx="4" fill="#dbe9ff" stroke="#0969da" stroke-width="2"/>
+  <text x="58" y="166" text-anchor="middle" font-size="13" font-weight="600" fill="#0a3069">program</text>
+  <text x="58" y="183" text-anchor="middle" font-size="12" fill="#0a3069">~10 MB</text>
+  <rect x="110" y="60" width="220" height="130" rx="6" fill="#f6f8fa" stroke="#8c959f" stroke-width="1.5"/>
+  <text x="220" y="120" text-anchor="middle" font-size="15" font-weight="600" fill="#57606a">input data</text>
+  <text x="220" y="142" text-anchor="middle" font-size="13" fill="#57606a">100 GB – 1 TB</text>
+  <text x="180" y="218" text-anchor="middle" font-size="14" fill="#1f2328">program ≪ input</text>
+
+  <!-- LLM: huge program, tiny input -->
+  <rect x="385" y="60" width="240" height="130" rx="6" fill="#ffe8cc" stroke="#bc4c00" stroke-width="2"/>
+  <text x="505" y="120" text-anchor="middle" font-size="15" font-weight="700" fill="#762c00">program (weights)</text>
+  <text x="505" y="142" text-anchor="middle" font-size="13" fill="#762c00">~16 – 140 GB</text>
+  <rect x="652" y="117" width="16" height="16" rx="2" fill="#f6f8fa" stroke="#8c959f" stroke-width="1.5"/>
+  <text x="660" y="155" text-anchor="middle" font-size="13" font-weight="600" fill="#57606a">prompt</text>
+  <text x="660" y="172" text-anchor="middle" font-size="12" fill="#57606a">KB – MB</text>
+  <text x="540" y="218" text-anchor="middle" font-size="14" fill="#1f2328">program ≫ input (10⁴ – 10⁸ ×)</text>
+</svg>

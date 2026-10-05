@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" width="720" height="400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <rect width="720" height="400" fill="#ffffff"/>
+
+  <!-- Column headers -->
+  <text x="190" y="40" text-anchor="middle" font-size="16" font-weight="700" fill="#57606a" letter-spacing="1">CONVENTIONAL COMPUTING</text>
+  <text x="530" y="40" text-anchor="middle" font-size="16" font-weight="700" fill="#57606a" letter-spacing="1">AI COMPUTING</text>
+
+  <!-- Left stack -->
+  <rect x="50" y="62" width="280" height="70" rx="8" fill="#eef2f7" stroke="#8c959f" stroke-width="1.5"/>
+  <text x="190" y="93" text-anchor="middle" font-size="18" font-weight="600" fill="#1f2328">Applications</text>
+  <text x="190" y="116" text-anchor="middle" font-size="14" fill="#57606a">e.g. databases</text>
+
+  <rect x="50" y="152" width="280" height="70" rx="8" fill="#dbe9ff" stroke="#0969da" stroke-width="2"/>
+  <text x="190" y="183" text-anchor="middle" font-size="18" font-weight="700" fill="#0a3069">OS + runtime</text>
+  <text x="190" y="206" text-anchor="middle" font-size="14" fill="#0a3069">processes · pages · files</text>
+
+  <rect x="50" y="242" width="280" height="70" rx="8" fill="#eef2f7" stroke="#8c959f" stroke-width="1.5"/>
+  <text x="190" y="273" text-anchor="middle" font-size="18" font-weight="600" fill="#1f2328">Hardware</text>
+  <text x="190" y="296" text-anchor="middle" font-size="14" fill="#57606a">CPUs</text>
+
+  <!-- Right stack -->
+  <rect x="390" y="62" width="280" height="70" rx="8" fill="#eef2f7" stroke="#8c959f" stroke-width="1.5"/>
+  <text x="530" y="93" text-anchor="middle" font-size="18" font-weight="600" fill="#1f2328">AI applications</text>
+  <text x="530" y="116" text-anchor="middle" font-size="14" fill="#57606a">e.g. LLMs</text>
+
+  <rect x="390" y="152" width="280" height="70" rx="8" fill="#ffe8cc" stroke="#bc4c00" stroke-width="2"/>
+  <text x="530" y="183" text-anchor="middle" font-size="18" font-weight="700" fill="#762c00">Inference engine</text>
+  <text x="530" y="206" text-anchor="middle" font-size="14" fill="#762c00">requests · tokens · KV blocks</text>
+
+  <rect x="390" y="242" width="280" height="70" rx="8" fill="#eef2f7" stroke="#8c959f" stroke-width="1.5"/>
+  <text x="530" y="273" text-anchor="middle" font-size="18" font-weight="600" fill="#1f2328">Hardware</text>
+  <text x="530" y="296" text-anchor="middle" font-size="14" fill="#57606a">GPUs · TPUs · ASICs</text>
+
+  <!-- Equivalence arrow between middle layers -->
+  <line x1="338" y1="187" x2="382" y2="187" stroke="#57606a" stroke-width="2" stroke-dasharray="4 3"/>
+  <text x="360" y="178" text-anchor="middle" font-size="18" fill="#57606a">≈</text>
+
+  <!-- Caption -->
+  <text x="360" y="352" text-anchor="middle" font-size="15" fill="#1f2328">The middle layer hides hardware from applications,</text>
+  <text x="360" y="374" text-anchor="middle" font-size="15" fill="#1f2328">and applications from hardware.</text>
+</svg>

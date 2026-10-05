@@ -87,13 +87,13 @@ params:
   disableSpecial1stPost: true
 
   homeInfoParams:
-    Title: "Hi, I'm Yutian 👋"
+    Title: "Hi, I'm Yutian"
     Content: |
-      I document my learning and thinking about AI/ML infrastructure here. Every post aims to take two angles: the technical depth to understand how things work, and the business intuition to know when it matters.
+      I document my learning and thinking about AI, ML infra, and sometimes math here. Every post tries to take two angles: the technical depth to understand how things work, and the business intuition to know when it matters.
 
-      I am currently a student at MIT. Previously at McKinsey, I built AI, data, and platform products in client tech stack. I obtained bachelor's degrees in math and CS from Columbia University with a focus on algebra and complexity theory. I'm especially interested in developer-facing B2B products :)
+      I'm currently a student at MIT. Previously, I earned bachelor's degrees in math and CS from Columbia, focusing on algebra and complexity theory; and worked at McKinsey building AI, data, and platform products in client tech stacks. I'm especially interested in developer-facing B2B products :)
 
-      Email: tinalin [at] mit [dot] edu
+      Reach out anytime — comments, feedback, or just to chat: tinalin [at] mit [dot] edu
 
   socialIcons:
     - name: linkedin
