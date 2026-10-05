@@ -6,6 +6,7 @@ resources/_gen/
 # --- Local-only: never pushed to the public repo ---
 CLAUDE.md
 .claude/
+drafts/
 # feature test post (code, math, images); reference only
 content/posts/hello-world/
 

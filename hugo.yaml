@@ -8,6 +8,13 @@ module:
   imports:
     - path: github.com/adityatelange/hugo-PaperMod
 
+# Post folders publish only what templates actually use (resized WebP, cover), not the raw originals.
+cascade:
+  - build:
+      publishResources: false
+    target:
+      path: /posts/**
+
 # Only tags at launch. To add multi-part series later, add `series: series` here.
 taxonomies:
   tag: tags

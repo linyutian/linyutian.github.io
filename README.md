@@ -15,25 +15,30 @@ Repo tooling (in the repo, not part of the site)
   archetypes/posts.md  front-matter template used by `hugo new`
   .github/workflows/   GitHub Actions: build and deploy on push to main
   go.mod, go.sum       pins the PaperMod theme version (Hugo Module)
+  scripts/check-post.py  post linter (front matter, images, math, links)
   README.md            this file
 
 Local only (gitignored, never pushed)
-  CLAUDE.md            working notes/context for Claude Code
+  CLAUDE.md, .claude/  context and writing-workflow skills for Claude Code
+  drafts/              work-in-progress posts
   content/posts/hello-world/   feature test post
   public/, resources/  build output
 ```
 
 ## Write a post
 
+Posts are Markdown page bundles: `content/posts/<slug>/index.md` with images in the same folder.
+
 ```sh
-hugo new posts/my-post-slug/index.md   # page bundle; drop images in the same folder
-hugo server -D                         # preview with drafts at http://localhost:1313
+hugo new posts/my-post-slug/index.md                 # or move in a finished draft folder
+python3 scripts/check-post.py content/posts/my-post-slug   # lint: front matter, images, math
+hugo server -D                                       # preview with drafts at http://localhost:1313
 ```
 
-Set `draft: false` when it's ready, then commit and push.
+Set `draft: false`, commit, and push to `main` to publish.
 
-- **Images**: `![alt](diagram.png)` with the file in the post folder. It's resized to 1200px max and converted to WebP automatically.
-- **Math**: inline `\( ... \)`, display `$$ ... $$` or `\[ ... \]`. KaTeX loads only on pages that contain math. A single `$` is plain text, so prices are safe.
+- **Images**: `![alt](diagram.png)` with the file in the post folder. Resized to 1200px max and converted to WebP automatically; a missing image fails the build.
+- **Math**: inline `\( ... \)`, display `$$ ... $$` or `\[ ... \]`. KaTeX loads only on pages with math. A single `$` is plain text, so prices are safe.
 - **Nav menu**: hidden for now; uncomment `menu:` in `hugo.yaml` to show Posts / Tags / Search.
 - **Cover image**: set `cover.image: cover.png` in front matter.
 
