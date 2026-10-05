@@ -1,0 +1,7 @@
+{{- /* Math passthrough: emit the TeX untouched for client-side KaTeX, and flag the page so extend_head.html loads KaTeX only where math exists. */ -}}
+{{- .Page.Store.Set "hasMath" true -}}
+{{- if eq .Type "block" -}}
+\[{{ .Inner | htmlEscape }}\]
+{{- else -}}
+\({{ .Inner | htmlEscape }}\)
+{{- end -}}

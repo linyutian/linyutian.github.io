@@ -1,0 +1,35 @@
+{{- /*
+  Image render hook: page-bundle raster images are resized to at most 1200px wide
+  and converted to WebP, with width/height set to avoid layout shift.
+  Remote URLs, SVGs, GIFs and missing files fall through untouched.
+*/ -}}
+{{- $maxWidth := 1200 -}}
+{{- $u := urls.Parse .Destination -}}
+{{- $src := $u.String -}}
+{{- $width := "" -}}
+{{- $height := "" -}}
+{{- if not $u.IsAbs -}}
+  {{- $path := strings.TrimPrefix "./" $u.Path -}}
+  {{- with or (.PageInner.Resources.Get $path) (resources.Get $path) -}}
+    {{- $img := . -}}
+    {{- if and (eq .ResourceType "image") (not (in (slice "svg" "gif") .MediaType.SubType)) -}}
+      {{- if gt .Width $maxWidth -}}
+        {{- $img = .Resize (printf "%dx webp" $maxWidth) -}}
+      {{- else -}}
+        {{- $img = .Process "webp" -}}
+      {{- end -}}
+      {{- $width = $img.Width -}}
+      {{- $height = $img.Height -}}
+    {{- end -}}
+    {{- $src = $img.RelPermalink -}}
+    {{- with $u.Fragment -}}{{- $src = printf "%s#%s" $src . -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $attributes := merge .Attributes (dict "alt" .Text "src" $src "title" (.Title | transform.HTMLEscape) "width" $width "height" $height "loading" "lazy" "decoding" "async") -}}
+<img
+  {{- range $k, $v := $attributes -}}
+    {{- if $v -}}
+      {{- printf " %s=%q" $k (string $v) | safeHTMLAttr -}}
+    {{- end -}}
+  {{- end -}}>
+{{- /**/ -}}

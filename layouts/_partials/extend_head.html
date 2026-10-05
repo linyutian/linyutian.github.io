@@ -1,0 +1,14 @@
+{{- /* KaTeX: loaded only on pages that contain math (flag set by render-passthrough.html), or with `math: true`. */ -}}
+{{- if or .Params.math (.Store.Get "hasMath") }}
+{{- $v := "0.19.0" }}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@{{ $v }}/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@{{ $v }}/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@{{ $v }}/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.querySelector('.post-content') || document.body, {
+    delimiters: [
+      {left: '\\[', right: '\\]', display: true},
+      {left: '\\(', right: '\\)', display: false}
+    ],
+    throwOnError: false
+  });"></script>
+{{- end }}

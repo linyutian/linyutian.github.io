@@ -1,0 +1,19 @@
+/* Code block colors to match the GitHub light/dark Chroma styles. */
+:root {
+    --code-block-bg: #f7f7f7;
+    --code-block-fg: #1f2328;
+}
+
+:root[data-theme="dark"] {
+    --code-block-bg: #0d1117;
+    --code-block-fg: #e6edf3;
+}
+
+.md-content pre code {
+    color: var(--code-block-fg);
+}
+
+/* Light code blocks need an edge against the white page. */
+.md-content .highlight:not(table) {
+    border: 1px solid var(--border);
+}

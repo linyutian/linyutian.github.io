@@ -1,0 +1,101 @@
+baseURL: https://linyutian.github.io/
+locale: en-US
+title: Yutian Lin
+enableRobotsTXT: true
+enableGitInfo: false
+
+module:
+  imports:
+    - path: github.com/adityatelange/hugo-PaperMod
+
+# Only tags at launch. To add multi-part series later, add `series: series` here.
+taxonomies:
+  tag: tags
+
+pagination:
+  pagerSize: 10
+
+minify:
+  disableXML: true
+
+outputs:
+  home: [HTML, RSS, JSON] # JSON powers PaperMod's search page
+
+markup:
+  goldmark:
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          inline: # single $ deliberately NOT a delimiter, so prices like "$5 vs $10" stay text
+            - ['\(', '\)']
+          block:
+            - ['\[', '\]']
+            - ['$$', '$$']
+    renderer:
+      unsafe: false
+  highlight:
+    noClasses: false # emit CSS classes; colors come from assets/css/extended/chroma.css
+    codeFences: true
+    guessSyntax: false
+    lineNos: false
+
+imaging:
+  webp:
+    quality: 82
+  jpeg:
+    quality: 82
+  resampleFilter: Lanczos
+
+# Nav menu hidden while there are only a few posts: the home page already lists every post.
+# To bring it back, uncomment. The /posts/, /tags/ and /search/ pages are still built either way.
+# menu:
+#   main:
+#     - name: Posts
+#       url: /posts/
+#       weight: 10
+#     - name: Tags
+#       url: /tags/
+#       weight: 20
+#     - name: Search
+#       url: /search/
+#       weight: 30
+
+params:
+  env: production
+  description: "Notes on AI/ML infrastructure — technical depth and business intuition."
+  author: Yutian Lin
+  defaultTheme: auto
+  disableThemeToggle: false
+
+  ShowReadingTime: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+  TocOpen: false
+  ShowRssButtonInSectionTermList: false
+  ShowShareButtons: false
+  ShowWordCount: false
+  disableSpecial1stPost: true
+
+  homeInfoParams:
+    Title: "Hi, I'm Yutian 👋"
+    Content: |
+      I document my learning and thinking about AI/ML infrastructure here. Every post aims to take two angles: the technical depth to understand how things work, and the business intuition to know when it matters.
+
+      I am currently a student at MIT. Previously at McKinsey, I built AI, data, and platform products in client tech stack. I obtained bachelor's degrees in math and CS from Columbia University with a focus on algebra and complexity theory. I'm especially interested in developer-facing B2B products :)
+
+      Email: tinalin [at] mit [dot] edu
+
+  socialIcons:
+    - name: linkedin
+      url: https://www.linkedin.com/in/yutian-lin
+
+  assets:
+    disableHLJS: true # use Hugo's Chroma, not highlight.js
+
+  goatcounter: linyutian
+
+  fuseOpts:
+    keys: [title, permalink, summary, content]

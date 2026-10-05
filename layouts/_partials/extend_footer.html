@@ -1,0 +1,4 @@
+{{- /* GoatCounter analytics: production builds only, so local `hugo server` previews aren't counted. */ -}}
+{{- if and hugo.IsProduction site.Params.goatcounter }}
+<script data-goatcounter="https://{{ site.Params.goatcounter }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+{{- end }}

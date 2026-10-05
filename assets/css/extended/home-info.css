@@ -1,0 +1,10 @@
+/* Landing page intro: big tagline, smaller explanation underneath. */
+.home-info .entry-content {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-top: 6px;
+}
+
+.home-info .entry-content p + p {
+    margin-top: 10px;
+}
