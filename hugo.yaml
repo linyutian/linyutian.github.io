@@ -91,13 +91,15 @@ params:
     Content: |
       I document my learning and thinking about AI, ML infra, and sometimes math here. Every post tries to take two angles: the technical depth to understand how things work, and the business intuition to know when it matters.
 
-      I'm currently a student at MIT. Previously, I earned bachelor's degrees in math and CS from Columbia, focusing on algebra and complexity theory; and worked at McKinsey building AI, data, and platform products in client tech stacks. I'm especially interested in developer-facing B2B products :)
+      My academic background is in math and CS, focusing on algebra and complexity theory. My professional experience is in building AI, data, and platform products in client tech stacks. I'm especially interested in developer-facing B2B products :)
 
-      Reach out anytime — comments, feedback, or just to chat: tinalin [at] mit [dot] edu
+      I appreciate your read. Please reach out for comments and feedback: tinalin [at] mit [dot] edu
 
   socialIcons:
     - name: linkedin
       url: https://www.linkedin.com/in/yutian-lin
+    - name: x
+      url: https://x.com/yutian_tinalin
 
   assets:
     disableHLJS: true # use Hugo's Chroma, not highlight.js
