@@ -20,7 +20,8 @@
   <!-- LLM: program streams into compute every token -->
   <rect x="380" y="78" width="110" height="84" rx="6" fill="#ffe8cc" stroke="#bc4c00" stroke-width="2"/>
   <text x="435" y="113" text-anchor="middle" font-size="14" font-weight="700" fill="#762c00">weights</text>
-  <text x="435" y="132" text-anchor="middle" font-size="12" fill="#762c00">~140 GB in HBM</text>
+  <text x="435" y="132" text-anchor="middle" font-size="12" fill="#762c00">~140 GB, sharded</text>
+  <text x="435" y="148" text-anchor="middle" font-size="12" fill="#762c00">in HBM</text>
   <line x1="496" y1="110" x2="569" y2="110" stroke="#bc4c00" stroke-width="3" marker-end="url(#ao)"/>
   <line x1="496" y1="130" x2="569" y2="130" stroke="#bc4c00" stroke-width="3" marker-end="url(#ao)"/>
   <text x="532" y="98" text-anchor="middle" font-size="12" font-weight="600" fill="#762c00">every token</text>

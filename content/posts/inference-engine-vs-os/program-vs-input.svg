@@ -16,7 +16,7 @@
   <!-- LLM: huge program, tiny input -->
   <rect x="385" y="60" width="240" height="130" rx="6" fill="#ffe8cc" stroke="#bc4c00" stroke-width="2"/>
   <text x="505" y="120" text-anchor="middle" font-size="15" font-weight="700" fill="#762c00">program (weights)</text>
-  <text x="505" y="142" text-anchor="middle" font-size="13" fill="#762c00">~16 – 140 GB</text>
+  <text x="505" y="142" text-anchor="middle" font-size="13" fill="#762c00">~60 – 140 GB</text>
   <rect x="652" y="117" width="16" height="16" rx="2" fill="#f6f8fa" stroke="#8c959f" stroke-width="1.5"/>
   <text x="660" y="155" text-anchor="middle" font-size="13" font-weight="600" fill="#57606a">prompt</text>
   <text x="660" y="172" text-anchor="middle" font-size="12" fill="#57606a">KB – MB</text>
