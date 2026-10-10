@@ -2,9 +2,9 @@
 title: "Inference Engine vs. Operating System: What Makes LLM Inference Hard?"
 date: 2026-10-05T03:59:14-04:00
 draft: false
-lastmod: 2026-10-07
+lastmod: 2026-10-09
 tags: [llm-inference, gpu, systems]
-summary: "Prefill vs. decode is a symptom. The cause: LLM inference streams a huge program through limited memory, once per token."
+summary: "A deep dive into the LLM inference workload vs. an OS: why inference rewards scale, why batch size sets pricing tiers, and why KV cache is becoming a product."
 ---
 
 A crash course on LLM inference usually starts with the distinction between prefill and decode: prefill is compute-bound, decode is memory-bound. The distinction is real, but it is a symptom rather than a cause. It also leaves out much of what makes inference hard: the size of the program, the shape of its state, and the traffic between machines. Large models must be spread across machines that talk to each other on every token.
@@ -25,9 +25,9 @@ The inference engine also relies on the same four mechanisms as an OS:
 
 | Mechanism | The OS manages | The inference engine manages |
 |---|---|---|
-| Scheduling | processes, threads | requests, tokens |
+| Scheduling | processes, threads | requests, tokens, sessions |
 | Virtual memory | pages in RAM | KV cache blocks in HBM |
-| Resource allocation | CPU, memory | GPU memory, compute, network |
+| Resource allocation | CPU, memory | CPU, GPU memory, compute, network |
 | Caching | page cache, buffer cache | KV cache, prefix cache |
 
 Many of the algorithms carry over too. For example, vLLM's PagedAttention is virtual-memory paging applied to the KV cache ([Kwon et al., 2023](https://arxiv.org/abs/2309.06180)). What differs between the OS and the inference engine is the unit these mechanisms manage.
@@ -67,7 +67,7 @@ In LLM inference, the program is the model weights and the data is the current t
 
 ### 2.3 Private, Growing State
 
-A database's state is large, persistent and **shared**; every query reads from the same tables. An LLM request's state is its KV cache. It is **private** to one request, it **grows** with every token, and every decode step **reads all of it and appends to it**.
+A database's state is large, persistent and **shared**; every query reads from the same tables. An LLM request's state is its KV cache. In naive inference (without optimizations like prefix caching), the KV cache is **private** to one request, it **grows** with every token, every decode step **reads all of it and appends to it**, and the engine frees it when the request finishes.
 
 ![How state is held. Classic system: many queries read one large, persistent set of shared tables. LLM inference: each request has its own private KV cache, shown as bars of different lengths for requests A, B and C, each growing with every token.](private-state.svg)
 
@@ -77,9 +77,9 @@ The engine therefore manages two memory objects with very different properties:
 |---|---|---|
 | Size | huge, fixed, known | grows per token, final size unknown |
 | Sharing | shared by all requests | private to one request |
-| Lifetime | while the model is loaded | the request (longer if cached) |
+| Lifetime | while the model is loaded | one request |
 
-The three differences build on each other. The program is huge (2.1), so it cannot stay near the processor. Decoding therefore streams it through the processor on every token (2.2). Each request then adds its own growing state (2.3), which competes for the same memory. Together they make memory, not compute, the scarce resource.
+In summary, the three differences from the OS workload build on each other. The LLM inference program is huge (2.1), so it cannot stay near the processor. Decoding therefore streams it through the processor on every token (2.2). Each request then adds its own growing state (2.3), which competes for the same memory. Together they make memory, not compute, the scarce resource.
 
 ## 3. Two Consequences of the Differences
 
