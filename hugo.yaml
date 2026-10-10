@@ -87,9 +87,9 @@ params:
   disableSpecial1stPost: true
 
   homeInfoParams:
-    Title: "Hi, I'm Yutian"
+    Title: "Hi, I'm Yutian Lin"
     Content: |
-      I document my learning and thinking about ML infra, data platform and math here. Every post tries to take two angles: the technical depth to understand how things work, and the business intuition to know when it matters.
+      I document my thinking about ML infra, data platform and math here. Every post tries to take two angles: the technical depth to understand how things work, and the business intuition to know when it matters.
 
       I studied math and CS at Columbia University, and am currently at MIT. I've built AI, data, and platform products for clients. I'm especially interested in developer-facing B2B products :)
 
