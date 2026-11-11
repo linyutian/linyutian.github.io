@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://linyutian.github.io/sitemap.xml

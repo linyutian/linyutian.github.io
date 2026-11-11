@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Llm-Inference on Yutian Lin</title>
+    <link>https://linyutian.github.io/tags/llm-inference/</link>
+    <description>Recent content in Llm-Inference on Yutian Lin</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 09 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://linyutian.github.io/tags/llm-inference/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Inference Engine vs. Operating System: What Makes LLM Inference Hard?</title>
+      <link>https://linyutian.github.io/posts/inference-engine-vs-os/</link>
+      <pubDate>Mon, 05 Oct 2026 03:59:14 -0400</pubDate>
+      <guid>https://linyutian.github.io/posts/inference-engine-vs-os/</guid>
+      <description>A deep dive into the LLM inference workload vs. an OS: why inference rewards scale, why batch size sets pricing tiers, and why KV cache is becoming a product.</description>
+    </item>
+  </channel>
+</rss>
